@@ -5,10 +5,91 @@
     <meta name="viewport" content="width=device-width" />
     <title>我的第一个网页</title>
     <link rel="icon" href="images/MyHead.jpg" sizes="16x16" />
-    <audio src="State_of_Sound_-_Wake_Up_Where_You_Are.mp3" id="dd" autoplay="autoplay" controls="controls" loop="loop"></audio>
-
+    <audio
+      id="yanshi"
+      src="bgmusic/Aimer_-_Ref_rain.flac"
+      autoplay="autoplay"
+      ioop="loop"
+    >
+      浏览器不支持
+    </audio>
   </head>
   <style>
+    /**/
+
+    .pg-body {
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 15px;
+    }
+
+    .text-cn {
+      font-size: xx-large;
+      font-weight: bolder;
+    }
+    .text-en {
+      font-size: large;
+      color: rgb(154, 47, 255);
+    }
+    /*flex*/
+    .f-head {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      justify-content: center;
+      align-items: flex-end;
+
+      background-image: url("images/bg/no3.png");
+      background-color: #cccccc;
+    }
+    .f-body {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+
+      align-items: center;
+      justify-content: center;
+      background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    }
+    .f-boxes {
+      display: flex;
+      width: 80vw;
+      height: 80vh;
+
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      border: 1px solid black;
+    }
+    .boxes {
+      height: 40%;
+      width: 40%;
+      border: 1px solid black;
+    }
+    .m-r {
+      margin-right: 10px;
+    }
+    .m-t {
+      margin-top: 10px;
+    }
+    .box-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .box-font {
+      text-align: center;
+      font-size: large;
+      color: rgb(154, 47, 255);
+    }
+    .f-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /*introduction*/
+
     /* 定义动画关键帧 */
     @keyframes fade-in {
       0% {
@@ -30,7 +111,7 @@
     }
   </style>
   <body>
-    <div style="text-align: center; padding: 40px">
+    <!-- <div class="pg-head">
       <img
         src="images/MyHead.jpg"
         alt="head"
@@ -38,19 +119,34 @@
         width="80px"
         height="80px"
       />
+    </div> -->
+    <div class="f-head">
+      <div class="pg-body">
+        <div id="test" class="text-fade text-cn"></div>
+        <div class="delay-text text-en">
+          <p>Hello!My nickname is "C1ickRa1nb0w",This is my first website.</p>
+        </div>
+      </div>
     </div>
-    <div style="max-width: 700px; margin: 30px auto; padding: 15px">
-      <p class="delay-text" style="color: rgb(154, 47, 255)">
-        Hello!My nickname is "C1ickRa1nb0w",This is my first website.
-      </p>
-      <div id="test" class="text-fade"></div>
-    </div>
-    <a href="music.html">音乐</a>
 
-    <div style="text-align: center">
+    <div class="f-body">
+      <div class="f-boxes">
+        <div class="boxes m-r box-content box-font">
+          <a href="nickName.html">自我介绍</a>
+        </div>
+        <div class="boxes box-content box-font">
+          <a href="riding.html">骑行图片</a>
+        </div>
+        <div class="boxes m-r box-content box-font">
+          <a href="kaman.html">假面骑士</a>
+        </div>
+        <div class="boxes box-content box-font">开发中...</div>
+      </div>
+    </div>
+    <div class="f-link">
       <p>友情链接</p>
 
-      <p>
+      <div>
         <a href="https://space.bilibili.com/386327581"
           ><img
             src="images/Link/tubiao1.jpg"
@@ -58,11 +154,19 @@
             width="60px"
             height="60px"
         /></a>
-      </p>
+
+        <a href="https://github.com/C1ickRa1nb0w"
+          ><img
+            src="images/Link/github.jpg"
+            alt="github"
+            width="60px"
+            height="60px"
+        /></a>
+      </div>
     </div>
 
     <script>
-      var text = "你好，我是“C1ickRa1nb0w”,这是我的第一个网页";
+      var text = "你好，我是“C1ickRa1nb0w”,这是我的第一个网页。";
       var num = text.length;
 
       var i = 0;
@@ -74,7 +178,7 @@
           clearInterval("done");
         }
       }
-      var done = setInterval("show()", 80); /*括号右边是控制文字浮现时间*/
+      var done = setInterval("show()", 200); /*括号右边是控制文字浮现时间*/
     </script>
 
     <script>
